@@ -1,6 +1,8 @@
 export interface QuizMeta {
   title: string;
   note?: string;
+  standard?: string;
+  timezone?: string;
 }
 
 export interface McqQuestion {
@@ -33,6 +35,7 @@ export interface QuizData {
   mcq: McqQuestion[];
   fillins: FillinQuestion[];
   essay: EssayQuestion;
+  appendix?: string;
 }
 
 export type McqAnswerMap = Record<string, number>;

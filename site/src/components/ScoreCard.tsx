@@ -18,7 +18,7 @@ const ScoreCard: React.FC<ScoreCardProps> = ({ summary, onReset }) => {
     <section className="rounded-2xl bg-white shadow-lg border border-slate-200 p-6 space-y-4">
       <div className="flex flex-col gap-1">
         <h2 className="text-xl font-semibold text-slate-900">客观题得分概览</h2>
-        <p className="text-sm text-slate-600">选择题 + 填空题即时计分，刷新自动恢复。</p>
+        <p className="text-sm text-slate-600">提交后生成的成绩概览，可随时重置重新作答。</p>
       </div>
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="rounded-xl border border-slate-200 p-4 bg-slate-50">

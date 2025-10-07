@@ -9,6 +9,8 @@ interface FillInProps {
   isCorrect: boolean | null;
   showAnswers: boolean;
   answerDetail?: string;
+  canCheck: boolean;
+  explain?: string;
 }
 
 const typeToInputMode: Record<string, React.HTMLAttributes<HTMLInputElement>['inputMode']> = {
@@ -25,7 +27,9 @@ const FillIn: React.FC<FillInProps> = ({
   onCheck,
   isCorrect,
   showAnswers,
-  answerDetail
+  answerDetail,
+  canCheck,
+  explain
 }) => {
   const feedback = isCorrect === null ? null : isCorrect;
   return (
@@ -51,18 +55,21 @@ const FillIn: React.FC<FillInProps> = ({
             feedback === false ? 'border-rose-400' : 'border-slate-300'
           }`}
         />
-        <button
-          type="button"
-          onClick={onCheck}
-          className="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-primary"
-        >
-          检查本题
-        </button>
+        {canCheck && (
+          <button
+            type="button"
+            onClick={onCheck}
+            className="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-primary"
+          >
+            检查本题
+          </button>
+        )}
       </div>
-      {showAnswers && answerDetail && (
+      {showAnswers && (answerDetail || explain) && (
         <div className="rounded-lg bg-slate-50 border border-dashed border-slate-200 p-3 text-sm text-slate-600">
           <p className="font-medium text-slate-700">参考答案：</p>
-          <p>{answerDetail}</p>
+          {answerDetail && <p>{answerDetail}</p>}
+          {explain && <p className="mt-1 text-slate-700">解析：{explain}</p>}
         </div>
       )}
     </div>
