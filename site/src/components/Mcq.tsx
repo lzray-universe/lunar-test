@@ -7,9 +7,10 @@ interface McqProps {
   onSelect: (choice: number) => void;
   answerIndex: number;
   showAnswers: boolean;
+  isSubmitted: boolean;
 }
 
-const Mcq: React.FC<McqProps> = ({ question, selected, onSelect, answerIndex, showAnswers }) => {
+const Mcq: React.FC<McqProps> = ({ question, selected, onSelect, answerIndex, showAnswers, isSubmitted }) => {
   const isCorrect = selected !== null && selected === answerIndex;
   const hasAnswered = selected !== null && selected !== undefined;
 
@@ -17,7 +18,7 @@ const Mcq: React.FC<McqProps> = ({ question, selected, onSelect, answerIndex, sh
     <div className="rounded-xl bg-white shadow-sm border border-slate-200 p-4 space-y-4">
       <div className="flex items-start justify-between gap-4">
         <h3 className="text-base font-semibold text-slate-900">{question.stem}</h3>
-        {hasAnswered && (
+        {isSubmitted && hasAnswered && (
           <span className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-sm ${isCorrect ? 'bg-emerald-100 text-emerald-700' : 'bg-rose-100 text-rose-700'}`}>
             {isCorrect ? '✔ 正确' : '✘ 错误'}
           </span>

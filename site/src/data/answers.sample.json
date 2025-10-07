@@ -1,12 +1,36 @@
 {
   "mcq": {
     "mcq-1": 1,
-    "mcq-2": 2,
-    "mcq-3": 1
+    "mcq-2": 1,
+    "mcq-3": 2,
+    "mcq-4": 1,
+    "mcq-5": 2,
+    "mcq-6": 1,
+    "mcq-7": 1,
+    "mcq-8": 2,
+    "mcq-9": 2,
+    "mcq-10": 2,
+    "mcq-11": 2,
+    "mcq-12": 1,
+    "mcq-13": 3,
+    "mcq-14": 2,
+    "mcq-15": 1,
+    "mcq-16": 1,
+    "mcq-17": 1,
+    "mcq-18": 1
   },
   "fillins": {
-    "fill-1": { "mode": "number", "answer": 29.531, "tolerance": 0.002 },
-    "fill-2": { "mode": "text", "answer": "农历正月初一", "caseInsensitive": true, "normalizeZh": true, "accept": ["农历正月初一", "正月初一"] },
-    "fill-3": { "mode": "date", "answer": "2034-02-19", "accept": ["2034年2月19日"] }
+    "fill-1": { "mode": "number", "answer": 29.531, "tolerance": 0.001 },
+    "fill-2": { "mode": "text", "accept": ["农历正月初一", "正月初一"], "caseInsensitive": false, "normalizeZh": true },
+    "fill-3": { "mode": "number", "answer": 12, "tolerance": 0 },
+    "fill-4a": { "mode": "number", "answer": 12, "tolerance": 0 },
+    "fill-4b": { "mode": "number", "answer": 0, "tolerance": 0 },
+    "fill-5": { "mode": "regex", "pattern": "^(甲午)$" },
+    "fill-6": { "mode": "regex", "pattern": "^\\s*(?:0?3|3)\\s*(?:月|[-/.])\\s*0?10\\s*(?:日|号)?\\s*$" },
+    "fill-7": { "mode": "regex", "pattern": "^(丙子)$" },
+    "fill-8": { "mode": "regex", "pattern": "^(中气)$" },
+    "fill-9": { "mode": "text", "accept": ["对", "正确"], "caseInsensitive": false, "normalizeZh": true },
+    "fill-10": { "mode": "date", "answer": "2034-02-19", "accept": ["YYYY-MM-DD", "YYYY年M月D日"] },
+    "fill-11": { "mode": "date", "answer": "2520-07-16", "accept": ["YYYY-MM-DD", "YYYY年M月D日"] }
   }
 }
